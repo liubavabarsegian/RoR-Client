@@ -1,0 +1,23 @@
+<main class = "form-main">
+    <div>
+        <h2>Задание:</h2> 
+        <p>Простое число называется числом Мерсенна, если оно может быть пред-
+        ставлено в виде 2p − 1, где p – тоже простое число. 
+        </p>
+        <p>Написать программу,
+        определяющую количество чисел Мерсенна ≤ некоторого n (n вводится с
+        клавиатуры).</p>
+        <p>Вывести на печать числа Мерсенна и их количество в ука-
+        занном диапазоне.</p>
+        <h2>Ввод</h2>
+        <%= form_with url: "/result",style: 'width: 60%;', data: {turbo: false}, method: :get do |form| %>
+        <p><%= form.label :query, "Введите положительное число n" %></p>
+        <p><%= form.number_field(:num, {:class => 'form-control'}) %></p>
+        <div class='form-check', style = 'margin: 5px;'>
+            <%= form.radio_button :mode, 'xml', id: 'radio1' %> XML
+            <%= form.radio_button :mode, 'html' , id: 'radio2' %> HTML
+        </div>
+        <p><%= form.submit "Найти числа Мерсена до n", :class => 'btn btn-primary' %></p>
+        <% end %>
+    </div>
+</main>
