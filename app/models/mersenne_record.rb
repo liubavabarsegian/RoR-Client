@@ -7,7 +7,7 @@ class MersenneRecord
 
   attr_accessor :num, :mode
 
-  validates :num, presence: { message: 'can\'t be blank' },
-                    comparison: { greater_than: 0 }
+  validates :num, presence: { message: 'can\'t be blank' }
   validates :mode, presence: { message: 'needs to be chosen' }
-  end
+  validates :num, numericality: { only_integer: true, greater_than: 0 }
+end

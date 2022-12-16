@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# helper
 module MersenneHelper
   URL_SERV = 'http://127.0.0.1:3000/result.xml'
   XSLT_PATH = 'public/result.xslt'
